@@ -12,6 +12,8 @@ gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 # Add 'bootstrap-sass'
 gem 'bootstrap-sass'
+# Add figaro gem for securely managing credentials
+gem 'figaro'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Add stripe for payment processing
