@@ -47,6 +47,19 @@
   </script>
 </head>
 <body>
+
+<%= form_tag charges_path, method: :POST do |f|%>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      </div>
+<% end %>
+
+
+
+
+
+  
   <h1>Charge $10 with Stripe</h1>
 
   <form action="charges" method="POST" id="payment-form">

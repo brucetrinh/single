@@ -124,15 +124,15 @@
     });
   </script>
 
-<body>
+<hr>
   <h1>Charge $10 with Stripe</h1>
 
-  <form action="charges" method="POST" id="payment-form">
+  <!-- <form action="charges" method="POST" id="payment-form">
     <span class="payment-errors"></span>
 
     <div class="form-row">
       <label>
-        <span>Name</span>
+        <span>Card Name</span>
         <input type="text" data-stripe='name'>
       </label>
     </div>
@@ -169,7 +169,51 @@
 
     <button type="submit">Submit Payment</button>
   </form>
-</body>
+<hr>
+
+<h1>Ruby coding</h1> -->
+
+<%= form_tag charges_path, method: "post", id: 'payment-form', :class => "panel-body" do %>
+<div class="form-group col-sm-12">
+<%=label_tag(:name,"Card Name")%>
+<%=text_field_tag :name, nil, :data =>{:stripe => 'name'}, :class => "form-control"%>
+</div>
+<div class="form-group col-sm-12">
+<%=label_tag(:email,"Email")%>
+<%=email_field_tag :email, nil, :class => "form-control"%>
+</div>
+<div class=" form-group">
+  <div class="col-sm-3">
+<%=label_tag(:cardnumber,"Card Number")%>
+<%=text_field_tag :cardnumber, nil, :data =>{:stripe => 'number'}, :class => "form-control"%>
+  </div>
+  <div class="col-sm-2">
+<%=label_tag(:cvc,"CVC")%>
+<%=text_field_tag :cvc, nil, :data =>{:stripe => 'cvc'}, :class => "form-control"%>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-xs-12">
+<%=label_tag(:exp_month,"Expiry Date")%>
+</div><br>
+<div class="col-xs-2">
+<%=text_field_tag :exp_month, nil,:data =>{:stripe => 'exp-month'}, :class => "form-control"%>
+</div>
+<div class="col-xs-1">
+  <h5>/</h5>
+</div>
+<div class="col-xs-2">
+<%=text_field_tag :exp_year, nil,:data =>{:stripe => 'exp-year'}, :class => "form-control"%>
+</div>
+</div>
+<br>
+<div class="form-group col-xs-12">
+<%= submit_tag "Submit Payment", class: "btn btn-success btn-lg btn-block" %>
+</div>
+</div>
+
+<% end %>
+
 
 	</div>
 </div>
