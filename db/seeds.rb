@@ -9,7 +9,7 @@
 product_details = Product.create(
 	title: "Product 1 Title",
 	subtitle: "Product 1 Subtitle",
-	price: "8",
+	price: "9",
 	sku: "PROD001",
 	description: %{Test Product 1},
 	)
