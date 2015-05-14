@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 growth_hacking = Product.create(
-	title: "Growth Hacking",
-	subtitle: "Crash Course",
-	price: "6.00",
-	sku: "GROHACK1"
-	description: %{Enter text in here},
+	title: "Product 1 Title",
+	subtitle: "Product 1 Subtitle",
+	price: "8",
+	sku: "GROHACK1",
+	description: %{<p>Test Product 1</p>},
 	)

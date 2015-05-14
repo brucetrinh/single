@@ -24,8 +24,7 @@ class ChargesController < ApplicationController
 	# end params[:stripeEmail]
 
 def create
-    # Amount in cents
-    amount = 600
+    product = Product.find_by_sku("GROHACK1")
 
  
     # Create the customer in Stripe
@@ -37,8 +36,8 @@ def create
     # Create the charge using the customer data returned by Stripe API
     charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: amount,
-      description: 'Test Description',
+      amount: product.price_in_cents,
+      description: product.description,
       currency: 'usd'
     )
  
