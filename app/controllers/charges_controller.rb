@@ -24,7 +24,7 @@ class ChargesController < ApplicationController
 	# end params[:stripeEmail]
 
 def create
-    product = Product.find_by_sku("GROHACK1")
+    product = Product.find_by_sku("PROD001")
 
  
     # Create the customer in Stripe
